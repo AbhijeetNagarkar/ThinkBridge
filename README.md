@@ -17,3 +17,9 @@ There are 5 packages
  feature file mentioned the given workflow of assignment
  and runner file contain the configuration
  I have generated output as html along with Junit using format(cucumber options in runner class)
+ 
+ We can Run the Project using JUnit.
+ 
+ Just Right click on Project->Run->Junit
+ 
+ 
