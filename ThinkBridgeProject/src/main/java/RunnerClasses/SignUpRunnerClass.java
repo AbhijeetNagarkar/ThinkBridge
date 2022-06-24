@@ -1,9 +1,10 @@
 package RunnerClasses;
 
-import org.junit.runner.RunWith;
 
+import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import utility.Constants;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -16,6 +17,7 @@ import cucumber.api.junit.Cucumber;
 		format = {"pretty","html: html-output","junit: junit-output"} // formatted output using pretty and html and junit report creation
 		)
 
-public class SignUpRunnerClass {
+public class SignUpRunnerClass extends Constants {
 
+		
 }

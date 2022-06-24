@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="27.702787">
+    <testcase classname="Sign Up Workflow" name="To verify Sign Up workflow" time="27.702787">
+        <system-out>
+            <![CDATA[Given User Launch a new Browser.............................................passed
+When User Open URL https://jt-dev.azurewebsites.net/#/SignUp................passed
+Then Validate that the dropdown has "English" and "Dutch"...................passed
+And Enter in User name......................................................passed
+And Enter organization......................................................passed
+And Enter email address.....................................................passed
+And Click on I agree to the Terms and Conditions............................passed
+And Click on SignUp.........................................................passed
+And Validate Email received.................................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

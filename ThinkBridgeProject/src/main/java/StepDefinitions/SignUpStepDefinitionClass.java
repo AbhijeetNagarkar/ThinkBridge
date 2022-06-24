@@ -3,45 +3,43 @@ package StepDefinitions;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import utility.Constants;
 import utility.WebPageObjectRepo;
 
-public class SignUpStepDefinitionClass extends Constants {
+
+public class SignUpStepDefinitionClass {
 
 	WebPageObjectRepo objPageObjRepo;  //its a class instance(class where we can store all webpage instance and using this obj repo instance we can fetch webpage instance
-	WebDriver driver;
+		
+	public WebDriver driver;
 	
+	@Before
+	public void browserSetup() throws IOException  //invoke before - which will create chrome browser
+	{
+			WebDriverManager.chromedriver().setup(); // created instance for chrome browser
+			driver = new ChromeDriver();
+					
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+	}
+	
+	@After
+	public void closeBrowser() {  // closing browser after processing script
+		driver.quit();
+	
+	}
 	@Given("^User Launch a new Browser$")
 	public void user_Launch_a_new_Browser() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		
-		if (browserName.equalsIgnoreCase("Chrome"))  // here we have checked on which browser we need to test
-		{
-			WebDriverManager.chromedriver().setup(); // created instance for chrome browser
-			driver = new ChromeDriver();
-		}
-
-		if (browserName.equalsIgnoreCase("FireFox")) 
-		{
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-		}
-				
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		
 		
 		objPageObjRepo = new WebPageObjectRepo(driver);		// instance which will give us webpage instances
 	}
@@ -94,9 +92,5 @@ public class SignUpStepDefinitionClass extends Constants {
 	  
 		// we can write the code to open Mail inbox and look for received mail using mail trap or we can check in db whether mail has been triggered or not
 	}
-	@After
-	public void closeBrowser() 
-	{
-		driver.quit();
-	}
+	
 }

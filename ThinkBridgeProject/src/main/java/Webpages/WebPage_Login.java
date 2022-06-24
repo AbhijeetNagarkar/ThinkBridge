@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebPage_Login extends Constants //extended to fetch automation URL
@@ -15,11 +14,11 @@ public class WebPage_Login extends Constants //extended to fetch automation URL
 	private WebDriver driver;
 	WebDriverWait wait;
 	
-	public WebPage_Login(WebDriver driver) //POM representation to intialise webelements
+	public WebPage_Login(WebDriver driver) //POM representation to initialize webelements
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
-		wait = new WebDriverWait(driver, 10);
+	
 	}
 	
 	@FindBy(id = "language")
@@ -65,7 +64,7 @@ public class WebPage_Login extends Constants //extended to fetch automation URL
 					String text = itr.next().getText();
 					if(text.equals(lang1) || text.equals(lang2))  // checking language
 					{
-						System.out.println(text +"language available");
+						System.out.println(text +" language available");
 						flag=flag+1;                              //language match then increasing flag 
 					}
 					
