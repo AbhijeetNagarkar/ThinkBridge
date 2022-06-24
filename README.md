@@ -17,3 +17,13 @@ There are 5 packages
  feature file mentioned the given workflow of assignment
  and runner file contain the configuration
  I have generated output as html along with Junit using format(cucumber options in runner class)
+ 
+ We can Run the Project using JUnit.
+ 
+ Just Open project in Eclipse by importing as Maven Project. 
+ Once imported, Right click on Project->Run->Junit
+ 
+ Check the Ouput or report status in html-output folder -> index.html
+ or in junit-output 
+ 
+ 
