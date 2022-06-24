@@ -20,6 +20,10 @@ There are 5 packages
  
  We can Run the Project using JUnit.
  
- Just Right click on Project->Run->Junit
+ Just Open project in Eclipse by importing as Maven Project. 
+ Once imported, Right click on Project->Run->Junit
+ 
+ Check the Ouput or report status in html-output folder -> index.html
+ or in junit-output 
  
  
